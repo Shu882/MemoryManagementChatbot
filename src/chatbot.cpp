@@ -44,7 +44,34 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+// move constructor
+ChatBot::ChatBot(ChatBot &&source) {
+	std::cout << "ChatBot move constructor" << std::endl;
+	_image = source._image;
+	_currentNode = source._currentNode; // is this redaunt??? I don't see this in the constructor
+	_rootNode = source._rootNode;
+	_chatLogic = source._chatLogic;
+	source._image = nullptr;
+	source._currentNode = nullptr;
+	source._rootNode = nullptr;
+	source._chatLogic = nullptr;
+}
 
+// move assignment operator
+ChatBot& ChatBot::operator=(ChatBot &&source){
+	std::cout << "ChatBot move assignment operator" << std::endl;
+	if (this == &source) return *this;
+	delete _image;
+	_image = source._image;
+	_currentNode = source._currentNode;
+	_rootNode = source._rootNode;
+	_chatLogic = source._chatLogic;
+	source._image = nullptr;
+	source._currentNode = nullptr;
+	source._rootNode = nullptr;
+	source._chatLogic = nullptr;
+	return *this;
+}
 ////
 //// EOF STUDENT CODE
 
