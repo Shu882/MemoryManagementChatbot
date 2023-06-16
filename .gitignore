@@ -1,1 +1,11 @@
 .github/**
+
+CMakeLists.txt
+.gitignore
+build/
+.vscode/
+cmake-build-debug/
+.idea/
+.DS_Store
+.gitignore
+CMakeLists.txt
