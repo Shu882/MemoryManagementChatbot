@@ -44,6 +44,11 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
+
+// you should have copy constructor and copy assignment operator
+
+// copy constructor
+
 // move constructor
 ChatBot::ChatBot(ChatBot &&source) {
 	std::cout << "ChatBot move constructor" << std::endl;
@@ -66,6 +71,9 @@ ChatBot& ChatBot::operator=(ChatBot &&source){
 	_currentNode = source._currentNode;
 	_rootNode = source._rootNode;
 	_chatLogic = source._chatLogic;
+
+	_chatLogic->SetChatbotHandle(this);
+
 	source._image = nullptr;
 	source._currentNode = nullptr;
 	source._rootNode = nullptr;

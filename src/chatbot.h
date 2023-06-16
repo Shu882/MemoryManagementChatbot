@@ -29,6 +29,8 @@ public:
 
     //// STUDENT CODE
     ////
+    // what about copy and copy assignment operator?
+
     // move constructor
 	ChatBot(ChatBot &&source);
 	// move assignment operator
